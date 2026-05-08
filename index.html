@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OECC Private Limited | Nuclear Mechanical Fabrication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <canvas id="reactor-canvas"></canvas>
+
+    <nav class="fixed w-full z-50 backdrop-blur-md border-b border-[var(--oecc-blue)] flex justify-between items-center px-8 py-4">
+        <div class="text-2xl font-bold tracking-tighter">
+            OECC <span class="text-blue-500">PRIVATE LIMITED</span>
+        </div>
+        <div class="hidden md:flex gap-8 font-semibold uppercase text-xs tracking-widest">
+            <a href="#home" class="hover:text-blue-400">Home</a>
+            <a href="#about" class="hover:text-blue-400">About</a>
+            <a href="#projects" class="hover:text-blue-400">Projects</a>
+            <a href="#contact" class="hover:text-blue-400">Contact</a>
+        </div>
+        <button id="theme-toggle" class="mode-btn border border-[var(--oecc-blue)] px-4 py-2 rounded text-xs font-bold transition-all">
+            ENVIRONMENT TOGGLE
+        </button>
+    </nav>
+
+    <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter uppercase">Primary <br><span class="text-blue-600">Fabrication</span></h1>
+        <p class="max-w-2xl text-lg opacity-70">Strategic mechanical engineering and construction for NPCIL nuclear power units[cite: 5].</p>
+    </section>
+
+    <section id="about" class="py-24 max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-8 border-l-4 border-blue-600 pl-4 uppercase tracking-widest">About Our Operations</h2>
+        <div class="prose dark:prose-invert max-w-none opacity-80">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-slate-900/10 dark:bg-black/20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center uppercase tracking-widest">Deployment Portfolio</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="project-card p-8 border border-blue-900/40 bg-white/5 backdrop-blur-sm rounded-lg transition-all hover:scale-105">
+                    <h3 class="font-bold text-blue-500 mb-3 text-xl">Project Alpha</h3>
+                    <p class="text-sm opacity-70">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                </div>
+                <div class="project-card p-8 border border-blue-900/40 bg-white/5 backdrop-blur-sm rounded-lg transition-all hover:scale-105">
+                    <h3 class="font-bold text-blue-500 mb-3 text-xl">Project Beta</h3>
+                    <p class="text-sm opacity-70">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis nostrud exercitation ullamco.</p>
+                </div>
+                <div class="project-card p-8 border border-blue-900/40 bg-white/5 backdrop-blur-sm rounded-lg transition-all hover:scale-105">
+                    <h3 class="font-bold text-blue-500 mb-3 text-xl">Project Gamma</h3>
+                    <p class="text-sm opacity-70">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="project-card p-8 border border-blue-900/40 bg-white/5 backdrop-blur-sm rounded-lg transition-all hover:scale-105">
+                    <h3 class="font-bold text-blue-500 mb-3 text-xl">Project Delta</h3>
+                    <p class="text-sm opacity-70">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>
+                </div>
+                <div class="project-card p-8 border border-blue-900/40 bg-white/5 backdrop-blur-sm rounded-lg transition-all hover:scale-105">
+                    <h3 class="font-bold text-blue-500 mb-3 text-xl">Project Epsilon</h3>
+                    <p class="text-sm opacity-70">Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis.</p>
+                </div>
+                <div class="project-card p-8 border border-blue-900/40 bg-white/5 backdrop-blur-sm rounded-lg transition-all hover:scale-105">
+                    <h3 class="font-bold text-blue-500 mb-3 text-xl">Project Zeta</h3>
+                    <p class="text-sm opacity-70">Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula amet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-12 uppercase tracking-widest">Comm Link</h2>
+        <div class="grid md:grid-cols-2 gap-12 text-left bg-[var(--oecc-blue)] text-white p-12 rounded-2xl shadow-xl">
+            <div>
+                <h3 class="text-xl font-bold mb-4 border-b border-white/20 pb-2">Headquarters</h3>
+                <p class="opacity-90">H.O. 106, Balaji Nagar,<br>Rawatbhata, 323307</p>
+                <h3 class="text-xl font-bold mt-6 mb-4 border-b border-white/20 pb-2">Site Office</h3>
+                <p class="opacity-90">KKNPP#3&4 Kudankulam,<br>Tamil Nadu-627120</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4 border-b border-white/20 pb-2">Direct Contact</h3>
+                <p class="mb-2"><strong>Phone:</strong> 9460016397, 8802232134</p>
+                <div class="flex flex-col gap-3 mt-4">
+                    <a href="mailto:info@omengg.org" class="bg-white text-[var(--oecc-blue)] px-6 py-3 rounded font-bold text-center hover:bg-blue-100 transition-colors">
+                        Email: info@omengg.org
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center opacity-40 text-xs uppercase tracking-widest border-t border-blue-900/10">
+        OECC Private Limited &copy; 2026 | Nuclear Operations Unit
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

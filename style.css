@@ -1,0 +1,42 @@
+:root {
+    --oecc-blue: #1a3a6c; /* Official Industrial Cobalt */
+    --oecc-accent: #007bff;
+    --cherenkov: #00f2ff;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    cursor: crosshair;
+    transition: background 0.5s ease;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+body.dark-mode { background-color: #05080a; color: #e0e6ed; }
+body.light-mode { background-color: #f0f4f8; color: #1a1a1a; }
+
+/* The Reactor Cooling Canvas */
+#reactor-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Enhanced Card Interactions */
+.project-card {
+    border: 1px solid var(--oecc-blue); /* Clearer borders */
+    background: rgba(26, 58, 108, 0.05);
+}
+
+.project-card:hover {
+    border-color: var(--cherenkov);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+    background: rgba(26, 58, 108, 0.15);
+}
+
+.mode-btn:hover {
+    background: var(--oecc-blue);
+    color: white;
+}

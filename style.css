@@ -1,8 +1,103 @@
 :root {
-    --oecc-blue: #1a3a6c; /* Official Industrial Cobalt */
+    --oecc-blue: #1a3a6c;
     --oecc-accent: #007bff;
     --cherenkov: #00f2ff;
 }
+
+/* =========================
+   BACKGROUND STORY SECTIONS
+========================= */
+
+.story-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.story-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* makes all gifs scale consistently */
+    object-position: center;
+    z-index: -3;
+    transform: scale(1.08);
+    filter: brightness(0.35) contrast(1.05);
+}
+
+.story-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 8, 10, 0.78),
+            rgba(5, 8, 10, 0.55),
+            rgba(5, 8, 10, 0.82)
+        );
+    z-index: -2;
+}
+
+/* =========================
+   SCROLL ANIMATIONS
+========================= */
+
+.slide-in-left,
+.slide-in-right {
+    opacity: 0;
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+}
+
+.slide-in-left {
+    transform: translateX(-120px) scale(0.92);
+}
+
+.slide-in-right {
+    transform: translateX(120px) scale(0.92);
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+}
+
+/* stagger effect */
+.delay-1 {
+    transition-delay: 0.15s;
+}
+
+.delay-2 {
+    transition-delay: 0.3s;
+}
+
+.delay-3 {
+    transition-delay: 0.45s;
+}
+
+/* =========================
+   PEOPLE CARDS
+========================= */
+
+.people-card {
+    backdrop-filter: blur(10px);
+    background: rgba(12, 18, 28, 0.55);
+    border: 1px solid rgba(0, 242, 255, 0.15);
+    transition: all 0.45s ease;
+}
+
+.people-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 242, 255, 0.4);
+    box-shadow: 0 0 35px rgba(0, 242, 255, 0.15);
+}
+
+/* =========================
+   GENERAL
+========================= */
 
 body {
     margin: 0;
@@ -12,22 +107,33 @@ body {
     font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
-body.dark-mode { background-color: #05080a; color: #e0e6ed; }
-body.light-mode { background-color: #f0f4f8; color: #1a1a1a; }
+body.dark-mode {
+    background-color: #05080a;
+    color: #e0e6ed;
+}
 
-/* The Reactor Cooling Canvas */
+body.light-mode {
+    background-color: #f0f4f8;
+    color: #1a1a1a;
+}
+
+/* Reactor Canvas */
+
 #reactor-canvas {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
     pointer-events: none;
 }
 
-/* Enhanced Card Interactions */
+/* Project Cards */
+
 .project-card {
-    border: 1px solid var(--oecc-blue); /* Clearer borders */
-    background: rgba(26, 58, 108, 0.05);
+    border: 1px solid var(--oecc-blue);
+    background: rgba(26, 58, 108, 0.08);
 }
 
 .project-card:hover {
@@ -39,4 +145,18 @@ body.light-mode { background-color: #f0f4f8; color: #1a1a1a; }
 .mode-btn:hover {
     background: var(--oecc-blue);
     color: white;
+}
+
+/* =========================
+   EXIT DIRECTIONS
+========================= */
+
+.exit-left {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.92);
+}
+
+.exit-right {
+    opacity: 0;
+    transform: translateX(120px) scale(0.92);
 }

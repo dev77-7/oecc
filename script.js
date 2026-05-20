@@ -49,7 +49,78 @@ document.addEventListener('mousemove', (e) => {
         particles.push(new CoolantParticle(e.clientX, e.clientY));
     }
 });
+let lastScrollY = window.scrollY;
 
+const observerOptions = {
+    threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries) => {
+
+    const scrollingDown = window.scrollY > lastScrollY;
+
+    entries.forEach(entry => {
+
+        const el = entry.target;
+
+        if (entry.isIntersecting) {
+
+            el.classList.add('is-visible');
+
+            // reset exit classes
+            el.classList.remove('exit-left');
+            el.classList.remove('exit-right');
+
+        } else {
+
+            el.classList.remove('is-visible');
+
+            // =========================
+            // SCROLLING DOWN
+            // =========================
+
+            if (scrollingDown) {
+
+                if (el.classList.contains('slide-in-left')) {
+                    el.classList.remove('exit-right');
+                    el.classList.add('exit-left');
+                }
+
+                if (el.classList.contains('slide-in-right')) {
+                    el.classList.remove('exit-left');
+                    el.classList.add('exit-right');
+                }
+
+            }
+
+            // =========================
+            // SCROLLING UP
+            // Reverse exit direction
+            // =========================
+
+            else {
+
+                if (el.classList.contains('slide-in-left')) {
+                    el.classList.remove('exit-left');
+                    el.classList.add('exit-right');
+                }
+
+                if (el.classList.contains('slide-in-right')) {
+                    el.classList.remove('exit-right');
+                    el.classList.add('exit-left');
+                }
+
+            }
+        }
+    });
+
+    lastScrollY = window.scrollY;
+
+}, observerOptions);
+
+document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
+    observer.observe(el);
+});
 function animate() {
     ctx.fillStyle = body.classList.contains('dark-mode') 
         ? 'rgba(5, 8, 10, 0.15)' 
